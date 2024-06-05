@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="public/css/output.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #toggle:checked ~ label div.toggle-circle {
+        transform: translateX(25px);
+        transition: all 0.4s ease;
+      }
+
+      #toggle:checked ~ label div.toggle-circle:before {
+        font-family: "Material Symbols Rounded";
+        content: "\e51c";
+        color: #fff;
+      }
+
+      #toggle ~ label div.toggle-circle {
+        cursor: pointer;
+        transition: all 0.4s ease;
+      }
+
+      #toggle ~ label div.toggle-circle:before {
+        font-family: "Material Symbols Rounded";
+        content: "\e518";
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-sky-100 dark:bg-[#222222] font-sora">
+    <header class="h-screen px-52 flex-col justify-between">
+      <nav class="flex justify-between align-middle items-center  py-16">
+        <div class="flex gap-8 align-middle items-center dark:text-slate-300">
+          <a href="index.html" class="flex align-middle">
+            <img
+              src="public/Foto Profil Baru (Compressed).png"
+              class="w-14 rounded-full border-4 border-[#86B6F6] dark:border-slate-500"
+              alt=""
+            />
+          </a>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Portofolio</a>
+        </div>
+        <div class="flex align-middle items-center gap-5">
+          <p class="tanggal-hijriah text-sm dark:text-slate-300">
+            <script>
+              function gmod(a, t) {
+                return ((a % t) + t) % t;
+              }
+              function kuwaiticalendar(t) {
+                var o = new Date();
+                t &&
+                  ((adjustmili = 864e5 * t),
+                  (todaymili = o.getTime() + adjustmili),
+                  (o = new Date(todaymili))),
+                  (day = o.getDate()),
+                  (month = o.getMonth()),
+                  (year = o.getFullYear()),
+                  (m = month + 1),
+                  (y = year),
+                  m < 3 && ((y -= 1), (m += 12)),
+                  (a = Math.floor(y / 100)),
+                  (b = 2 - a + Math.floor(a / 4)),
+                  y < 1583 && (b = 0),
+                  1582 == y &&
+                    (m > 10 && (b = -10),
+                    10 == m && ((b = 0), day > 4 && (b = -10))),
+                  (jd =
+                    Math.floor(365.25 * (y + 4716)) +
+                    Math.floor(30.6001 * (m + 1)) +
+                    day +
+                    b -
+                    1524),
+                  (b = 0),
+                  jd > 2299160 &&
+                    ((a = Math.floor((jd - 1867216.25) / 36524.25)),
+                    (b = 1 + a - Math.floor(a / 4))),
+                  (bb = jd + b + 1524),
+                  (cc = Math.floor((bb - 122.1) / 365.25)),
+                  (dd = Math.floor(365.25 * cc)),
+                  (ee = Math.floor((bb - dd) / 30.6001)),
+                  (day = bb - dd - Math.floor(30.6001 * ee)),
+                  (month = ee - 1),
+                  ee > 13 && ((cc += 1), (month = ee - 13)),
+                  (year = cc - 4716),
+                  (wd = t ? gmod(jd + 1 - t, 7) + 1 : gmod(jd + 1, 7) + 1),
+                  (iyear = 10631 / 30),
+                  (epochastro = 1948084),
+                  (epochcivil = 1948085),
+                  (shift1 = 0.1335),
+                  (z = jd - epochastro),
+                  (cyc = Math.floor(z / 10631)),
+                  (z -= 10631 * cyc),
+                  (j = Math.floor((z - shift1) / iyear)),
+                  (iy = 30 * cyc + j),
+                  (z -= Math.floor(j * iyear + shift1)),
+                  (im = Math.floor((z + 28.5001) / 29.5)),
+                  13 == im && (im = 12),
+                  (id = z - Math.floor(29.5001 * im - 29));
+                var r = new Array(8);
+                return (
+                  (r[0] = day),
+                  (r[1] = month - 1),
+                  (r[2] = year),
+                  (r[3] = jd - 1),
+                  (r[4] = wd - 1),
+                  (r[5] = id),
+                  (r[6] = im - 1),
+                  (r[7] = iy),
+                  r
+                );
+              }
+              function writeIslamicDate(a) {
+                var t = new Array(
+                    "Ahad",
+                    "Senin",
+                    "Selasa",
+                    "Rabu",
+                    "Kamis",
+                    "Jumat",
+                    "Sabtu"
+                  ),
+                  o = new Array(
+                    "Muharram",
+                    "Safar",
+                    "Rabi'ul Awwal",
+                    "Rabi'ul Akhir",
+                    "Jumadal Awwal",
+                    "Jumadal Akhir",
+                    "Rajab",
+                    "Sya'ban",
+                    "Ramadhan",
+                    "Syawwal",
+                    "Dzulqa'adah",
+                    "Dzulhijjah"
+                  ),
+                  r = kuwaiticalendar(a);
+                return (
+                  t[r[4]] + ", " + r[5] + " " + o[r[6]] + " " + r[7] + " H"
+                );
+              }
+              document.write(writeIslamicDate());
+            </script>
+          </p>
+
+          <div class="flex justify-center align-middle">
+            <input type="checkbox" name="" class="hidden" id="toggle" />
+            <label for="toggle" class="">
+              <div
+                class="w-14 h-7 bg-[#86B6F6] dark:bg-[#223B75] rounded-full flex align-middle items-center justify-between p-0.5 relative"
+              >
+                <!-- <span class="material-symbols-rounded">dark_mode</span> -->
+                <div
+                  class="toggle-circle bg-[#192655] dark:bg-[#86B6F6] w-5 h-5 rounded-full absolute left-1"
+                ></div>
+                <!-- <span class="material-symbols-rounded text-sm">light_mode</span> -->
+              </div>
+            </label>
+          </div>
+        </div>
+      </nav>
+      <div class=" flex items-center justify-between">
+        <h1 class="text-3xl text-[#192655]">
+            Assalaamu’alaikum!<br>
+            I’m <span class="font-semibold">Muhammad Rizqi Ghana </span>
+        </h1>
+        <div class="w-40 h-40 bg-black"></div>
+      </div>
+      <p>lorem</p>
+    </header>
+  </body>
+  <script>
+    const darkModeToggle = document.querySelector("#toggle");
+    const html = document.querySelector("html");
+
+    darkModeToggle.addEventListener("click", () =>
+      darkModeToggle.checked
+        ? html.classList.add("dark")
+        : html.classList.remove("dark")
+    );
+  </script>
+</html>
