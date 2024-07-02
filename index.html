@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,32 +17,25 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
       #toggle:checked ~ label div.toggle-circle {
         transform: translateX(25px);
         transition: all 0.4s ease;
       }
 
-      #toggle:checked ~ label div.toggle-circle:before {
-        font-family: "Material Symbols Rounded";
-        content: "\e51c";
-        color: #fff;
-      }
-
       #toggle ~ label div.toggle-circle {
         cursor: pointer;
         transition: all 0.4s ease;
       }
-
-      #toggle ~ label div.toggle-circle:before {
-        font-family: "Material Symbols Rounded";
-        content: "\e518";
-        color: #fff;
+      
+      .hero-img {
+        box-shadow: -10px 10px #223B75;
       }
     </style>
   </head>
   <body class="px-52 bg-sky-100 dark:bg-[#222222] font-sora">
-    <header class="flex-col justify-between min-h-screen">
+    <header class="flex flex-col justify-between min-h-screen">
       <nav class="flex justify-between align-middle items-center  py-16">
         <div class="flex gap-8 align-middle items-center dark:text-slate-300">
           <a href="index.html" class="flex align-middle">
@@ -52,7 +45,7 @@
               alt=""
             />
           </a>
-          <a href="#">About</a>
+          <a href="#about">About</a>
           <a href="#">Blog</a>
           <a href="#">Portofolio</a>
         </div>
@@ -175,18 +168,127 @@
         </div>
       </nav>
       <div class=" flex items-center justify-between">
-        <h1 class="text-3xl text-[#192655]">
+        <h1 class="text-3xl text-[#192655] dark:text-white leading-loose">
             Assalaamu’alaikum!<br>
             I’m <span class="font-semibold">Muhammad Rizqi Ghana </span>
         </h1>
-        <div class="w-40 h-40 bg-black"></div>
+        <img src="https://images.unsplash.com/photo-1528372444006-1bfc81acab02?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="max-w-96 rounded-xl hero-img" alt="">
       </div>
-      <p>lorem</p>
+      
+      <p class="flex items-center py-16 gap-2 text-[#] text-gray-800 dark:text-white font-normal">
+        <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500  animate-pulse"></span>
+        Scroll down to view more
+      </p>
     </header>
 
-    <main>
-      <h2>About</h2>
-    </main>
+    <section class="py-16 grid grid-cols-2 gap-12 min-h-screen">
+      <div class="about-me" id="about">
+        <div class="mb-12">
+          <h2 class="flex items-center gap-2 text-3xl text-[#192655] font-semibold">
+            <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500"></span>
+            About
+          </h2>
+          <img src="src/img/foto_profil.png" class="w-36 h-36 rounded-full my-12" alt="">
+          <p class="mb-3">Mollis parturient justo sodales phasellus tellus. Proin sollicitudin natoque sodales lobortis a habitasse. Class letius eget finibus tristique vulputate. Blandit sodales per proin turpis maecenas magnis diam urna euismod penatibus. </p>
+          <p> 
+            Placerat class ex eleifend auctor vivamus nunc mollis ante ultricies nostra. Interdum torquent hendrerit donec enim nibh consequat vel posuere.
+          </p>
+        </div>
+
+        <div class="">
+          <h3 class="text-xl text-[#192655] font-semibold mb-6">Get in Touch</h3>
+          <ul class="list-none leading-10">
+            <li><a href="https://instagram.com/mrizqighana"><i class="bi bi-instagram mr-2"></i>@mrizqighana</a></li>
+            <li><a href="https://x.com/mrizqighana"><i class="bi bi-twitter-x mr-2"></i>@mrizqighana</a></li>
+            <li><a href="https://github.com/mrizqighana"><i class="bi bi-github mr-2"></i>@mrizqighana</a></li>
+            <li><a href="mailto:ana@mrga.id"><i class="bi bi-envelope-at-fill mr-2"></i>ana@marga.id</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="skillset">
+        <h2 class="flex items-center gap-2 text-3xl text-[#192655] font-semibold">
+          <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500"></span>
+          Skillset
+        </h2>
+
+        <div class="mt-10 fullstack-web">
+          <p class="text-xl text-[#192655] font-medium">Fullstack Web Development</p>
+          <div class="mt-6 flex flex-wrap">
+            <img src="src/img/html5.png" class="" alt="">
+            <img src="src/img/css3.png" alt="">
+            <img src="src/img/js.png" alt="">
+            <img src="src/img/tailwind.png" alt="">
+            <img src="src/img/laravel.png" alt="">
+          </div>
+        </div>
+
+        <div class="mt-10 other-language">
+          <p class="text-xl text-[#192655] font-medium">Other Language</p>
+          <div class="mt-6 flex flex-wrap">
+            <img src="src/img/cpp.png" alt="">
+            <img src="src/img/python.png" alt="">
+          </div>
+        </div>
+
+        <div class="mt-10 tools">
+          <p class="text-xl text-[#192655] font-medium">Tools</p>
+          <div class="mt-6 flex flex-wrap">
+            <img src="src/img/github.png" alt="">
+            <img src="src/img/git.png" alt="">
+            <img src="src/img/vscode.png" alt="">
+            <img src="src/img/ubuntu.png" alt="">
+          </div>
+        </div>
+
+        <div class="mt-10 tools">
+          <p class="text-xl text-[#192655] font-medium">Certificates</p>
+          <div class="mt-6 leading-10 ">
+            <p><a href="#">Dicoding - Belajar Front-End untuk Pemula</a></p>
+            <p><a href="#">Dicoding - Memulai Pemrograman dengan Python</a></p>
+            <p><a href="#">Dicoding - AWS Cloud Practitioner Essentials</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portofolio py-16" id="portofolio">
+      <h2 class="flex items-center gap-2 text-3xl text-[#192655] font-semibold">
+        <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500"></span>
+        Portofolio
+      </h2>
+      <div class="grid grid-cols-3 mt-10 w-full">
+        <div class="mb-10">
+          <h3 class="mb-6">Web Kalkulator</h3>
+          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="mb-6">Web Kalkulator</h3>
+          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="mb-6">Web Kalkulator</h3>
+          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="mb-6">Web Kalkulator</h3>
+          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="mb-6">Web Kalkulator</h3>
+          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="mb-6">Web Kalkulator</h3>
+          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        </div>
+      </div>
+    </section>
   </body>
   <script>
     const darkModeToggle = document.querySelector("#toggle");
