@@ -75,6 +75,65 @@
         width: 100%;
         transition: all 0.4s ease;
       }
+
+      .portofolio-item {
+        position: relative;
+      }
+
+      .portofolio-item h3::before {
+        content: 'Live view';
+        position: absolute;
+        top: -25px;
+        left: 0;
+        padding: 0.5em 1.2em;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 12px;
+        width: fit-content;
+        background: #223B75;
+        /* letter-spacing: ; */
+        font-weight: 400;
+        transition: all 0.4s ease;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .portofolio-item h3:hover::before {
+        visibility: visible;
+        opacity: 100%;
+        transform: translateY(-20px);
+        transition: all 0.4s ease;
+      }
+
+      .portofolio-github i {
+        position: relative;
+        font-style: normal;
+      }
+
+      .portofolio-github i::after {
+        content: 'Source code';
+        position: absolute;
+        top: -25px;
+        left: 0;
+        padding: 0.5em 1.2em;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 12px;
+        width: max-content;
+        background: #223B75;
+        /* letter-spacing: ; */
+        font-weight: 400;
+        transition: all 0.4s ease;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .portofolio-github i:hover::after {
+        opacity: 100%;
+        transform: translateX(30px);
+        visibility: visible;
+        transition: all 0.4s ease;
+      }
     </style>
   </head>
   <body class="px-12 sm:px-25 md:px-30 lg:px-52 bg-sky-100 dark:bg-[#222222] font-sora">
@@ -304,9 +363,15 @@
       </h2>
       <div class="grid grid-cols-3 mt-10 w-full">
         <div class="mb-10 h-full">
-          <a href="" class="links">
-            <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Web Kalkulator</h3>
-          </a>
+          <div class="flex gap-2">
+            <a href="https://mrgadev.github.io/kalkulator" target="_blank" class="portofolio-item" >
+              <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium" >Web Kalkulator</h3>
+            </a>
+
+            <a href="https://github.com/mrgadev/kalkulator" target="_blank" class="portofolio-github">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
           <p class="dark:text-white">Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
           <div class="flex flex-wrap mt-4 gap-2">
             <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
@@ -316,7 +381,15 @@
         </div>
 
         <div class="mb-10 h-full">
-          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Ngoding Yuk! Academy</h3>
+          <div class="flex gap-2">
+            <a href="https://mrgadev.github.io/ngoding-yuk" class="portofolio-item" target="_blank">
+              <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium" >Ngoding Yuk!</h3>
+            </a>
+
+            <a href="https://github.com/mrgadev/ngoding-yuk" class="portofolio-github" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
           <p class="dark:text-white">Landing page sederhana dengan studi kasus, website pelatihan coding. Yang menerapkan teknik CSS Grid (terinspirasi dari video "Ngobar WPU - CSS Grid" :D)</p>
           <div class="flex flex-wrap mt-4 gap-2">
             <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
@@ -325,7 +398,15 @@
         </div>
 
         <div class="mb-10 h-full">
-          <h3 class="mb-6 text-xl text-[#192655] font-medium dark:text-white">Nurussalaf Search</h3>
+          <div class="flex gap-2">
+            <a href="https://nurussalaf.my.id" class="portofolio-item" target="_blank">
+              <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium" >NUrussalaf Search</h3>
+            </a>
+
+            <a href="https://github.com/mrgadev/nurussalaf" class="portofolio-github" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
           <p class="dark:text-white">Nurussalaf Search adalah sebuah mesin pencari Islami yang berbasiskan database dari Google (Custom Search)</p>
           <div class="flex flex-wrap mt-4 gap-2">
             <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
@@ -334,7 +415,15 @@
         </div>
 
         <div class="mb-10 h-full">
-          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Web Kalkulator</h3>
+          <div class="flex gap-2">
+            <a href="" class="portofolio-item" >
+              <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium" >Carty</h3>
+            </a>
+
+            <a href="https://github.com/mrgadev/carty" class="portofolio-github" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
           <p class="dark:text-white">Aplikasi CRUD dengan studi kasus inventori produk, dibuat menggunakan PHP, MySQL untuk back-end dan Bootstrap 4 untuk front-end.</p>
           <div class="flex flex-wrap mt-4 gap-2">
             <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
@@ -347,7 +436,15 @@
         </div>
 
         <div class="mb-10 h-full">
-          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Hitung Luas</h3>
+          <div class="flex gap-2">
+            <a href="https://github.com/mrgadev/pascal">
+              <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium" >Hitung Luas</h3>
+            </a>
+
+            <a href="" class="portofolio-github" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
           <p class="dark:text-white">Merupakan aplikasi penghitung luas bangun datar, walaupun masih berbasis command line :), dibuat menggunakan Pascal. Untuk menunya menggunakan perulangan REPEAT UNTIL.</p>
           <div class="flex flex-wrap mt-4 gap-2">
           <!-- <span class="p-2 bg-[#192655] text-white text-[10px] rounded">HTML</span> -->
@@ -356,7 +453,15 @@
         </div>
 
         <div class="mb-10 h-full">
-          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium ">Kalkulator BMI</h3>
+          <div class="flex gap-2">
+            <a href="">
+              <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium" >Kalkulator BMI</h3>
+            </a>
+
+            <a href="https://github.com/mrgadev/pascal" class="portofolio-github" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
           <p class="dark:text-white">Merupakan aplikasi penghitung indeks berat badan (BMI), walaupun masih berbasis command line :), dibuat menggunakan Pascal. Untuk menunya menggunakan perulangan REPEAT UNTIL.</p>
           <div class="flex flex-wrap mt-4 gap-2">
             <!-- <span class="p-2 bg-[#192655] text-white text-[10px] rounded">HTML</span>
