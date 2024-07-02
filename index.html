@@ -19,6 +19,9 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
+      * {
+        box-sizing: border-box;
+      }
       #toggle:checked ~ label div.toggle-circle {
         transform: translateX(25px);
         transition: all 0.4s ease;
@@ -32,11 +35,50 @@
       .hero-img {
         box-shadow: -10px 10px #223B75;
       }
+
+      nav {
+        transition: all 0.4s ease;
+      }
+
+      nav.scrolled {
+        position: fixed;
+        /* width: 100vw; */
+        left: 4rem;
+        right: 4rem;
+        top: 0;
+        transition: all 0.4s ease;
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.23);
+        /* border-radius: 16px; */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.1px);
+        -webkit-backdrop-filter: blur(3.1px);
+        border: 1px solid rgba(255, 255, 255, 0.57);
+        margin: 2rem 4rem 0 4rem;
+        padding: 2rem;
+        border-radius: 20px;
+      }
+
+      .links::before  {
+        position: absolute;
+        content: '';
+        width: 0%;
+        height: 3px;
+        bottom:-10px;
+        border-radius: 5px;
+        transition: all 0.4s ease;
+        background-color: #223B75;
+      }
+
+      .links:hover::before {
+        width: 100%;
+        transition: all 0.4s ease;
+      }
     </style>
   </head>
-  <body class="px-52 bg-sky-100 dark:bg-[#222222] font-sora">
-    <header class="flex flex-col justify-between min-h-screen">
-      <nav class="flex justify-between align-middle items-center  py-16">
+  <body class="px-12 sm:px-25 md:px-30 lg:px-52 bg-sky-100 dark:bg-[#222222] font-sora">
+    <header class="flex flex-col justify-between min-h-screen max-w-screen">
+      <nav class="flex flex-col lg:flex-row justify-between align-middle items-center  py-16">
         <div class="flex gap-8 align-middle items-center dark:text-slate-300">
           <a href="index.html" class="flex align-middle">
             <img
@@ -45,10 +87,12 @@
               alt=""
             />
           </a>
-          <a href="#about">About</a>
-          <a href="#">Blog</a>
-          <a href="#">Portofolio</a>
+          <a href="#about" class="relative links before:bg-[#192655] before:dark:bg-whi">About</a>
+          <a href="#" class="relative links">Blog</a>
+          <a href="#" class="relative links">Portofolio</a>
         </div>
+        <!-- <a href="#">Blog</a> -->
+        
         <div class="flex align-middle items-center gap-5">
           <p class="tanggal-hijriah text-sm dark:text-slate-300">
             <script>
@@ -121,12 +165,12 @@
               function writeIslamicDate(a) {
                 var t = new Array(
                     "Ahad",
-                    "Senin",
-                    "Selasa",
-                    "Rabu",
-                    "Kamis",
-                    "Jumat",
-                    "Sabtu"
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
                   ),
                   o = new Array(
                     "Muharram",
@@ -184,36 +228,36 @@
     <section class="py-16 grid grid-cols-2 gap-12 min-h-screen">
       <div class="about-me" id="about">
         <div class="mb-12">
-          <h2 class="flex items-center gap-2 text-3xl text-[#192655] font-semibold">
+          <h2 class="flex items-center gap-2 text-3xl text-[#192655] dark:text-white font-semibold">
             <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500"></span>
             About
           </h2>
           <img src="src/img/foto_profil.png" class="w-36 h-36 rounded-full my-12" alt="">
-          <p class="mb-3">Mollis parturient justo sodales phasellus tellus. Proin sollicitudin natoque sodales lobortis a habitasse. Class letius eget finibus tristique vulputate. Blandit sodales per proin turpis maecenas magnis diam urna euismod penatibus. </p>
-          <p> 
+          <p class="mb-3 dark:text-white">Mollis parturient justo sodales phasellus tellus. Proin sollicitudin natoque sodales lobortis a habitasse. Class letius eget finibus tristique vulputate. Blandit sodales per proin turpis maecenas magnis diam urna euismod penatibus. </p>
+          <p class="dark:text-white"> 
             Placerat class ex eleifend auctor vivamus nunc mollis ante ultricies nostra. Interdum torquent hendrerit donec enim nibh consequat vel posuere.
           </p>
         </div>
 
         <div class="">
-          <h3 class="text-xl text-[#192655] font-semibold mb-6">Get in Touch</h3>
+          <h3 class="text-xl text-[#192655] dark:text-white font-semibold mb-6">Get in Touch</h3>
           <ul class="list-none leading-10">
-            <li><a href="https://instagram.com/mrizqighana"><i class="bi bi-instagram mr-2"></i>@mrizqighana</a></li>
-            <li><a href="https://x.com/mrizqighana"><i class="bi bi-twitter-x mr-2"></i>@mrizqighana</a></li>
-            <li><a href="https://github.com/mrizqighana"><i class="bi bi-github mr-2"></i>@mrizqighana</a></li>
-            <li><a href="mailto:ana@mrga.id"><i class="bi bi-envelope-at-fill mr-2"></i>ana@marga.id</a></li>
+            <li><a href="https://instagram.com/mrizqighana" class="dark:text-white"><i class="bi bi-instagram mr-2"></i>@mrizqighana</a></li>
+            <li><a href="https://x.com/mrizqighana" class="dark:text-white"><i class="bi bi-twitter-x mr-2"></i>@mrizqighana</a></li>
+            <li><a href="https://github.com/mrizqighana" class="dark:text-white"><i class="bi bi-github mr-2"></i>@mrizqighana</a></li>
+            <li><a href="mailto:ana@mrga.id" class="dark:text-white"><i class="bi bi-envelope-at-fill mr-2"></i>ana@marga.id</a></li>
           </ul>
         </div>
       </div>
 
       <div class="skillset">
-        <h2 class="flex items-center gap-2 text-3xl text-[#192655] font-semibold">
+        <h2 class="flex items-center gap-2 text-3xl text-[#192655] dark:text-white font-semibold">
           <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500"></span>
           Skillset
         </h2>
 
         <div class="mt-10 fullstack-web">
-          <p class="text-xl text-[#192655] font-medium">Fullstack Web Development</p>
+          <p class="text-xl text-[#192655] dark:text-white font-medium">Fullstack Web Development</p>
           <div class="mt-6 flex flex-wrap">
             <img src="src/img/html5.png" class="" alt="">
             <img src="src/img/css3.png" alt="">
@@ -224,7 +268,7 @@
         </div>
 
         <div class="mt-10 other-language">
-          <p class="text-xl text-[#192655] font-medium">Other Language</p>
+          <p class="text-xl text-[#192655] dark:text-white font-medium">Other Language</p>
           <div class="mt-6 flex flex-wrap">
             <img src="src/img/cpp.png" alt="">
             <img src="src/img/python.png" alt="">
@@ -232,7 +276,7 @@
         </div>
 
         <div class="mt-10 tools">
-          <p class="text-xl text-[#192655] font-medium">Tools</p>
+          <p class="text-xl text-[#192655] dark:text-white font-medium">Tools</p>
           <div class="mt-6 flex flex-wrap">
             <img src="src/img/github.png" alt="">
             <img src="src/img/git.png" alt="">
@@ -242,50 +286,82 @@
         </div>
 
         <div class="mt-10 tools">
-          <p class="text-xl text-[#192655] font-medium">Certificates</p>
+          <p class="text-xl text-[#192655] dark:text-white font-medium">Certificates</p>
           <div class="mt-6 leading-10 ">
-            <p><a href="#">Dicoding - Belajar Front-End untuk Pemula</a></p>
-            <p><a href="#">Dicoding - Memulai Pemrograman dengan Python</a></p>
-            <p><a href="#">Dicoding - AWS Cloud Practitioner Essentials</a></p>
+            <p><a href="#" class="dark:text-white">Dicoding - Belajar Front-End untuk Pemula</a></p>
+            <p><a href="#" class="dark:text-white">Dicoding - Memulai Pemrograman dengan Python</a></p>
+            <p><a href="#" class="dark:text-white">Dicoding - AWS Cloud Practitioner Essentials</a></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="portofolio py-16" id="portofolio">
-      <h2 class="flex items-center gap-2 text-3xl text-[#192655] font-semibold">
+    <section class="portofolio py-16 " id="portofolio">
+      <h2 class="flex items-center gap-2 text-3xl text-[#192655] dark:text-white font-semibold">
         <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500"></span>
         Portofolio
       </h2>
       <div class="grid grid-cols-3 mt-10 w-full">
-        <div class="mb-10">
-          <h3 class="mb-6">Web Kalkulator</h3>
-          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        <div class="mb-10 h-full">
+          <a href="" class="links">
+            <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Web Kalkulator</h3>
+          </a>
+          <p class="dark:text-white">Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+          <div class="flex flex-wrap mt-4 gap-2">
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">CSS</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">JavaScript</span>
+          </div>
         </div>
 
-        <div class="mb-10">
-          <h3 class="mb-6">Web Kalkulator</h3>
-          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        <div class="mb-10 h-full">
+          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Ngoding Yuk! Academy</h3>
+          <p class="dark:text-white">Landing page sederhana dengan studi kasus, website pelatihan coding. Yang menerapkan teknik CSS Grid (terinspirasi dari video "Ngobar WPU - CSS Grid" :D)</p>
+          <div class="flex flex-wrap mt-4 gap-2">
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">CSS</span>
+          </div>
         </div>
 
-        <div class="mb-10">
-          <h3 class="mb-6">Web Kalkulator</h3>
-          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        <div class="mb-10 h-full">
+          <h3 class="mb-6 text-xl text-[#192655] font-medium dark:text-white">Nurussalaf Search</h3>
+          <p class="dark:text-white">Nurussalaf Search adalah sebuah mesin pencari Islami yang berbasiskan database dari Google (Custom Search)</p>
+          <div class="flex flex-wrap mt-4 gap-2">
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">CSS</span>
+          </div>
         </div>
 
-        <div class="mb-10">
-          <h3 class="mb-6">Web Kalkulator</h3>
-          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        <div class="mb-10 h-full">
+          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Web Kalkulator</h3>
+          <p class="dark:text-white">Aplikasi CRUD dengan studi kasus inventori produk, dibuat menggunakan PHP, MySQL untuk back-end dan Bootstrap 4 untuk front-end.</p>
+          <div class="flex flex-wrap mt-4 gap-2">
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">HTML</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">CSS</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">Javascript</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">Bootstrap 4</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">PHP</span>
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">MySQL</span>
+          </div>
         </div>
 
-        <div class="mb-10">
-          <h3 class="mb-6">Web Kalkulator</h3>
-          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        <div class="mb-10 h-full">
+          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium">Hitung Luas</h3>
+          <p class="dark:text-white">Merupakan aplikasi penghitung luas bangun datar, walaupun masih berbasis command line :), dibuat menggunakan Pascal. Untuk menunya menggunakan perulangan REPEAT UNTIL.</p>
+          <div class="flex flex-wrap mt-4 gap-2">
+          <!-- <span class="p-2 bg-[#192655] text-white text-[10px] rounded">HTML</span> -->
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">Pascal</span>
+          </div>
         </div>
 
-        <div class="mb-10">
-          <h3 class="mb-6">Web Kalkulator</h3>
-          <p>Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
+        <div class="mb-10 h-full">
+          <h3 class="mb-6 text-xl text-[#192655] dark:text-white font-medium ">Kalkulator BMI</h3>
+          <p class="dark:text-white">Merupakan aplikasi penghitung indeks berat badan (BMI), walaupun masih berbasis command line :), dibuat menggunakan Pascal. Untuk menunya menggunakan perulangan REPEAT UNTIL.</p>
+          <div class="flex flex-wrap mt-4 gap-2">
+            <!-- <span class="p-2 bg-[#192655] text-white text-[10px] rounded">HTML</span>
+            <span class="p-2 bg-[#192655] text-white text-[10px] rounded">CSS</span> -->
+            <span class="p-2 bg-[#192655] dark:bg-gray-600 text-white text-[10px] rounded">Pascal</span>
+          </div>
         </div>
       </div>
     </section>
@@ -299,5 +375,23 @@
         ? html.classList.add("dark")
         : html.classList.remove("dark")
     );
+
+    // Javascript to make navabr sticky
+
+    // Get navbar element (tag)
+    const navbar = document.querySelector('nav');
+    // Get the navbar's offset value
+    const offset = navbar.offsetHeight;
+    // Run this function while window is scrolling
+    window.onscroll = function() {
+      // Check, if scrolled window in y axis is greater than ofset value
+      // then, add scrolled class to navbar
+      if(window.scrollY > offset) {
+        navbar.classList.add('scrolled');
+      // Otherwise, remove it
+      } else if(window.scrollY < offset) {
+        navbar.classList.remove('scrolled');
+      }
+    }
   </script>
 </html>
