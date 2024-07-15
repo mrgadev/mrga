@@ -18,7 +18,15 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0" />
     <style>
       * {
         box-sizing: border-box;
@@ -136,10 +144,10 @@
       }
     </style>
   </head>
-  <body class="px-12 sm:px-25 md:px-30 lg:px-52 bg-sky-100 dark:bg-[#222222] font-sora">
+  <body class="px-10 md:px-30 lg:px-52 bg-sky-100 dark:bg-[#222222] font-sora">
     <header class="flex flex-col justify-between min-h-screen max-w-screen">
-      <nav class="flex flex-col lg:flex-row justify-between align-middle items-center  py-16">
-        <div class="flex gap-8 align-middle items-center dark:text-slate-300">
+      <nav class="flex lg:flex-row justify-between align-middle items-center py-10 md:py-16">
+        <div class="flex gap-2 md:gap-5 align-middle items-center dark:text-slate-300">
           <a href="index.html" class="flex align-middle">
             <img
               src="public/Foto Profil Baru (Compressed).png"
@@ -147,14 +155,25 @@
               alt=""
             />
           </a>
-          <a href="#about" class="relative links before:bg-[#192655] before:dark:bg-whi">About</a>
-          <a href="#" class="relative links">Blog</a>
-          <a href="#" class="relative links">Portofolio</a>
+          <div class="visible md:invisible">
+            <span class="material-symbols-rounded rotate-180 dropdown-toggle transition-all">keyboard_arrow_up</span>
+            <div class="absolute invisible top-28 flex flex-col gap-3 bg-white p-5 rounded-lg shadow-lg dropdown-content">
+              <a href="#about" class="tetx-[#192655] before:bg-[#192655] before:dark:bg-white">About</a>
+              <a href="#" class="before:bg-[#192655] before:dark:bg-white">Blog</a>
+              <a href="#" class="before:bg-[#192655] before:dark:bg-white">Portofolio</a>
+            </div>
+          </div>
+          <!-- <p class="font-elmessiri text-2xl font-semibold">محمد رزقي</p> -->
+          <div class="invisible md:visible gap-3 flex">
+            <a href="#about" class="relative links before:bg-[#192655] before:dark:bg-white">About</a>
+            <a href="#" class="relative links before:bg-[#192655] before:dark:bg-white">Blog</a>
+            <a href="#" class="relative links before:bg-[#192655] before:dark:bg-white">Portofolio</a>
+          </div>
         </div>
         <!-- <a href="#">Blog</a> -->
         
-        <div class="flex align-middle items-center gap-5">
-          <p class="tanggal-hijriah text-sm dark:text-slate-300">
+        <div class=" flex align-middle items-center gap-2">
+          <p class="tanggal-hijriah invisible md:visible text-sm dark:text-slate-300">
             <script>
               function gmod(a, t) {
                 return ((a % t) + t) % t;
@@ -255,6 +274,108 @@
             </script>
           </p>
 
+          <p class="tanggal-hijriah visible md:invisible text-sm flex items-center gap-2 dark:text-slate-300">
+            <span class="material-symbols-rounded">event</span>
+            <script>
+              function gmod(a, t) {
+                return ((a % t) + t) % t;
+              }
+              function kuwaiticalendar(t) {
+                var o = new Date();
+                t &&
+                  ((adjustmili = 864e5 * t),
+                  (todaymili = o.getTime() + adjustmili),
+                  (o = new Date(todaymili))),
+                  (day = o.getDate()),
+                  (month = o.getMonth()),
+                  (year = o.getFullYear()),
+                  (m = month + 1),
+                  (y = year),
+                  m < 3 && ((y -= 1), (m += 12)),
+                  (a = Math.floor(y / 100)),
+                  (b = 2 - a + Math.floor(a / 4)),
+                  y < 1583 && (b = 0),
+                  1582 == y &&
+                    (m > 10 && (b = -10),
+                    10 == m && ((b = 0), day > 4 && (b = -10))),
+                  (jd =
+                    Math.floor(365.25 * (y + 4716)) +
+                    Math.floor(30.6001 * (m + 1)) +
+                    day +
+                    b -
+                    1524),
+                  (b = 0),
+                  jd > 2299160 &&
+                    ((a = Math.floor((jd - 1867216.25) / 36524.25)),
+                    (b = 1 + a - Math.floor(a / 4))),
+                  (bb = jd + b + 1524),
+                  (cc = Math.floor((bb - 122.1) / 365.25)),
+                  (dd = Math.floor(365.25 * cc)),
+                  (ee = Math.floor((bb - dd) / 30.6001)),
+                  (day = bb - dd - Math.floor(30.6001 * ee)),
+                  (month = ee - 1),
+                  ee > 13 && ((cc += 1), (month = ee - 13)),
+                  (year = cc - 4716),
+                  (wd = t ? gmod(jd + 1 - t, 7) + 1 : gmod(jd + 1, 7) + 1),
+                  (iyear = 10631 / 30),
+                  (epochastro = 1948084),
+                  (epochcivil = 1948085),
+                  (shift1 = 0.1335),
+                  (z = jd - epochastro),
+                  (cyc = Math.floor(z / 10631)),
+                  (z -= 10631 * cyc),
+                  (j = Math.floor((z - shift1) / iyear)),
+                  (iy = 30 * cyc + j),
+                  (z -= Math.floor(j * iyear + shift1)),
+                  (im = Math.floor((z + 28.5001) / 29.5)),
+                  13 == im && (im = 12),
+                  (id = z - Math.floor(29.5001 * im - 29));
+                var r = new Array(8);
+                return (
+                  (r[0] = day),
+                  (r[1] = month - 1),
+                  (r[2] = year),
+                  (r[3] = jd - 1),
+                  (r[4] = wd - 1),
+                  (r[5] = id),
+                  (r[6] = im - 1),
+                  (r[7] = iy),
+                  r
+                );
+              }
+              function writeIslamicDate(a) {
+                var t = new Array(
+                    "Ahad",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ),
+                  o = new Array(
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12"
+                  ),
+                  r = kuwaiticalendar(a);
+                return (
+                   r[5] + " &#x2022; " + o[r[6]] + " &#x2022; " + r[7] + " H"
+                );
+              }
+              document.write(writeIslamicDate());
+            </script>
+          </p>
+
           <div class="flex justify-center align-middle">
             <input type="checkbox" name="" class="hidden" id="toggle" />
             <label for="toggle" class="">
@@ -271,10 +392,10 @@
           </div>
         </div>
       </nav>
-      <div class=" flex items-center justify-between">
-        <h1 class="text-3xl text-[#192655] dark:text-white leading-loose">
-            Assalaamu’alaikum!<br>
-            I’m <span class="font-semibold">Muhammad Rizqi Ghana </span>
+      <div class="flex flex-row items-center justify-between">
+        <h1 class="absolute md:static text-xl  w-fit bottom-10 md:text-3xl text-[#192655] dark:text-white leading-loose">
+            <span class="py-2 bg-[#192655] md:bg-transparent text-white md:text-[#192655] dark:text-white leading-loose">Assalaamu’alaikum!<br>
+            I’m Muhammad Rizqi Ghana </span>
         </h1>
         <img src="https://images.unsplash.com/photo-1528372444006-1bfc81acab02?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="max-w-96 rounded-xl hero-img" alt="">
       </div>
@@ -285,7 +406,7 @@
       </p>
     </header>
 
-    <section class="py-16 grid grid-cols-2 gap-12 min-h-screen">
+    <section class="py-16 grid md:grid-cols-2 gap-12 min-h-screen">
       <div class="about-me" id="about">
         <div class="mb-12">
           <h2 class="flex items-center gap-2 text-3xl text-[#192655] dark:text-white font-semibold">
@@ -361,7 +482,7 @@
         <span class="w-3 h-3 rounded-full bg-[#192655] dark:bg-slate-500"></span>
         Portofolio
       </h2>
-      <div class="grid grid-cols-3 mt-10 w-full">
+      <div class="grid md:grid-cols-3 mt-10 w-full">
         <div class="mb-10 h-full">
           <div class="flex gap-2">
             <a href="https://mrgadev.github.io/kalkulator" target="_blank" class="portofolio-item" >
@@ -369,7 +490,7 @@
             </a>
 
             <a href="https://github.com/mrgadev/kalkulator" target="_blank" class="portofolio-github">
-              <i class="bi bi-github"></i>
+              <i class="bi bi-github text-[#192655] dark:text-white"></i>
             </a>
           </div>
           <p class="dark:text-white">Sebuah aplikasi kalkulator sederhana yang menerapkan teknik CSS Flexbox dan menggunakan Web Storage API, untuk menyimpan data hasil kalkulasi.</p>
@@ -387,7 +508,7 @@
             </a>
 
             <a href="https://github.com/mrgadev/ngoding-yuk" class="portofolio-github" target="_blank">
-              <i class="bi bi-github"></i>
+              <i class="bi bi-github text-[#192655] dark:text-white"></i>
             </a>
           </div>
           <p class="dark:text-white">Landing page sederhana dengan studi kasus, website pelatihan coding. Yang menerapkan teknik CSS Grid (terinspirasi dari video "Ngobar WPU - CSS Grid" :D)</p>
@@ -404,7 +525,7 @@
             </a>
 
             <a href="https://github.com/mrgadev/nurussalaf" class="portofolio-github" target="_blank">
-              <i class="bi bi-github"></i>
+              <i class="bi bi-github text-[#192655] dark:text-white"></i>
             </a>
           </div>
           <p class="dark:text-white">Nurussalaf Search adalah sebuah mesin pencari Islami yang berbasiskan database dari Google (Custom Search)</p>
@@ -421,7 +542,7 @@
             </a>
 
             <a href="https://github.com/mrgadev/carty" class="portofolio-github" target="_blank">
-              <i class="bi bi-github"></i>
+              <i class="bi bi-github text-[#192655] dark:text-white"></i>
             </a>
           </div>
           <p class="dark:text-white">Aplikasi CRUD dengan studi kasus inventori produk, dibuat menggunakan PHP, MySQL untuk back-end dan Bootstrap 4 untuk front-end.</p>
@@ -442,7 +563,7 @@
             </a>
 
             <a href="" class="portofolio-github" target="_blank">
-              <i class="bi bi-github"></i>
+              <i class="bi bi-github text-[#192655] dark:text-white"></i>
             </a>
           </div>
           <p class="dark:text-white">Merupakan aplikasi penghitung luas bangun datar, walaupun masih berbasis command line :), dibuat menggunakan Pascal. Untuk menunya menggunakan perulangan REPEAT UNTIL.</p>
@@ -459,7 +580,7 @@
             </a>
 
             <a href="https://github.com/mrgadev/pascal" class="portofolio-github" target="_blank">
-              <i class="bi bi-github"></i>
+              <i class="bi bi-github text-[#192655] dark:text-white"></i>
             </a>
           </div>
           <p class="dark:text-white">Merupakan aplikasi penghitung indeks berat badan (BMI), walaupun masih berbasis command line :), dibuat menggunakan Pascal. Untuk menunya menggunakan perulangan REPEAT UNTIL.</p>
@@ -482,10 +603,19 @@
         : html.classList.remove("dark")
     );
 
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    dropdownToggle.addEventListener("click", () => {
+      dropdownContent.classList.toggle("invisible");
+      dropdownToggle.classList.toggle("rotate-180");
+      console.log('dropdownContent');
+    });
+
     // Javascript to make navabr sticky
 
     // Get navbar element (tag)
-    const navbar = document.querySelector('nav');
+    // const navbar = document.querySelector('nav');
     // Get the navbar's offset value
     const offset = navbar.offsetHeight;
     // Run this function while window is scrolling
