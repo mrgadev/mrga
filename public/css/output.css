@@ -578,48 +578,16 @@ video {
   position: sticky;
 }
 
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
 .left-1 {
   left: 0.25rem;
 }
 
 .top-28 {
   top: 7rem;
-}
-
-.top-3 {
-  top: 0.75rem;
-}
-
-.top-36 {
-  top: 9rem;
-}
-
-.bottom-36 {
-  bottom: 9rem;
-}
-
-.bottom-1 {
-  bottom: 0.25rem;
-}
-
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.bottom-5 {
-  bottom: 1.25rem;
-}
-
-.bottom-4 {
-  bottom: 1rem;
-}
-
-.bottom-7 {
-  bottom: 1.75rem;
 }
 
 .my-12 {
@@ -711,38 +679,17 @@ video {
   width: 1.25rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
-.w-52 {
-  width: 13rem;
-}
-
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-28 {
-  width: 7rem;
+.w-full {
+  width: 100%;
 }
 
 .max-w-96 {
   max-width: 24rem;
-}
-
-.max-w-9 {
-  max-width: 2.25rem;
-}
-
-.rotate-0 {
-  --tw-rotate: 0deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .rotate-180 {
@@ -768,24 +715,12 @@ video {
   list-style-type: none;
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .flex-row {
   flex-direction: row;
 }
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-col-reverse {
-  flex-direction: column-reverse;
 }
 
 .flex-wrap {
@@ -814,14 +749,6 @@ video {
 
 .gap-3 {
   gap: 0.75rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
-}
-
-.gap-0 {
-  gap: 0px;
 }
 
 .scroll-smooth {
@@ -877,11 +804,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#192\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 153 34 / var(--tw-bg-opacity));
-}
-
 .p-0 {
   padding: 0px;
 }
@@ -896,10 +818,6 @@ video {
 
 .p-5 {
   padding: 1.25rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-10 {
@@ -1092,10 +1010,6 @@ video {
     position: static;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1104,20 +1018,12 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
   .md\:gap-5 {
     gap: 1.25rem;
   }
 
   .md\:bg-transparent {
     background-color: transparent;
-  }
-
-  .md\:bg-none {
-    background-image: none;
   }
 
   .md\:py-16 {
@@ -1133,11 +1039,6 @@ video {
   .md\:text-\[\#192655\] {
     --tw-text-opacity: 1;
     color: rgb(25 38 85 / var(--tw-text-opacity));
-  }
-
-  .md\:dark\:text-white:is(.dark *) {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
